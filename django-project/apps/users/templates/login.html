@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block navigation_top %}
+{% endblock %}
+
+{% block main-content %}
+
+    <br>
+    <div class="w3-row w3-container w3-center">
+        <img src="{% static 'images/Logo-lis-250x250.png' %}" alt="logo" class="w3-image">
+    </div>
+    <h2 class="w3-row lao-noto w3-container w3-center">ລະບົບສູນກາງຄຸ້ມຄອງປະກັນໄພພາກບັງຄັບ</h2>
+
+    <div class="w3-row-padding">
+        <div class="w3-col m2 l4">&nbsp;</div>
+        <div class="w3-col s12 m8 l4 w3-center w3-container">
+            {% if messages %}
+            <div class="w3-panel w3-pale-red">
+                {% for message in messages %}
+                    -- {{ message }} --
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            <form method="post" class="w3-container">
+                {% csrf_token %}
+                <div class="w3-section">
+                    <label class="w3-text-dark-grey">ລະຫັດຜູ້ໄຊ້ / ອີເມວ / ເບີໂທ</label>
+                    <input type="text" name="username" autofocus="" autocomplete="off" maxlength="150" class="w3-input w3-animate-input w3-theme-l5" required="" id="id_username">
+                </div>
+
+                <div class="w3-section">
+                    <label class="w3-text-dark-grey">ລະຫັດຜ່ານ</label>
+                    <input type="password" name="password" autocomplete="off" maxlength="150" class="w3-input w3-theme-l5" required="" id="id_password">
+                </div>
+                <br>
+                <button class="w3-button w3-round-xlarge w3-block w3-margin-top w3-black" type="submit">ເຂົ້າລະບົບ</button>
+            </form>
+        </div>
+        <div class="w3-col m2 l4 w3-center">&nbsp;</div>
+    </div>
+    <div class="w3-container w3-center">
+        <p class="lao-noto">ກົມຄຸ້ມຄອງ ວິສາຫະກິດລັດລົງທຶນ ແລະ ການປະກັນໄພ<br>
+            ກະຊວງການເງິນ<br>
+            ສາທາລະນະລັດ ປະຊາທິປະໄຕ ປະຊາຊົນລາວ<br>
+        </p>
+    </div>
+
+
+
+{% endblock %}
