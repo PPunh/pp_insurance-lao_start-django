@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% load widget_tweaks %}
+
+
+
+{% block main-content %}
+    <div class="w3-container w3-center w3-row">
+        <h1 class="qr-h1">QR Generator</h1>
+        <div class="w3-container w3-half w3-padding-64">
+            <form method="POST">
+                {% csrf_token %}
+                <label for="data">Enter URL for generate QR</label> <br><br>
+                    <input class="w3-input w3-border w3-border-teal w3-round-large" type="text" name="data" required > <br><br>
+                    <input class="w3-button w3-teal w3-hover-green w3-hover-shadow w3-round" type="submit" value="Generate QR Code">
+            </form>
+        </div>
+
+        <div class="w3-container w3-half w3-card-4 w3-border w3-border-teal w3-round-large w3-padding-24">
+            <h3>Generated QR Code</h3>
+            {% if img_data %}   
+                    <img src="{{ img_data }}" alt="QR Code"> <br>
+                    <a href="{{ img_data }}" download="qr_code.png" class="w3-button w3-teal w3-round-large w3-hover-blue w3-hover-shadow">Save QR Code</a>
+            {% else %}
+                <p class="w3-text-red">No QR code generated yet.</p>   
+            {% endif %}
+
+        </div>
+    </div>
+    
+{% endblock %}

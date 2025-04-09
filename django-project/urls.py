@@ -31,8 +31,9 @@ urlpatterns = [
     path('api/schema/', SpectacularAPIView.as_view(), name='api-schema'),
     path('api/docs/', SpectacularSwaggerView.as_view(url_name='api-schema'), name='api-docs'),
     path('api/redocs/', SpectacularRedocView.as_view(url_name='api-schema'), name='api-redocs'),
-    path('', include('apps.users.urls', namespace='users')),
+    path('users/', include('apps.users.urls', namespace='users')),
     path('agents/', include('apps.agents.urls', namespace='agents')),
+    path('', include('apps.general.urls', namespace='general')),
 ]
 
 '''
