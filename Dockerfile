@@ -67,3 +67,6 @@ ENV PATH="/venv/bin:$PATH"
 
 # Switch to django-user
 USER django-user
+
+# For deployment purpose, run django app using gunicorn
+CMD ["gunicorn", "django-project.wsgi:application", "--bind", "0.0.0.0:8000"]
