@@ -1,5 +1,6 @@
 # Use python 3.12 on Debain 12 bookworm
 FROM python:3.12-bookworm
+
 LABEL maintainer="Mong, mr.souriya@gmail.com, PITEC.la"
 
 ENV PYTHONUNBUFFERED=1
@@ -67,6 +68,3 @@ ENV PATH="/venv/bin:$PATH"
 
 # Switch to django-user
 USER django-user
-
-# For deployment purpose, run django app using gunicorn
-CMD ["gunicorn", "django-project.wsgi:application", "--bind", "0.0.0.0:8000"]

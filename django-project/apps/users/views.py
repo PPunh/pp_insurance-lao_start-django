@@ -53,7 +53,7 @@ class Login(LoginView):
 def logout_view(request):
     logout(request)
     messages.success(request, "ທ່ານຳໄດ້ອອກຈາກລະບົບສຳເລັດ")
-    return redirect('users:login')
+    return redirect('general:home')
 
 
 @login_required
