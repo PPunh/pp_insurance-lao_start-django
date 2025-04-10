@@ -8,28 +8,13 @@ import base64
 
 
 
-# def generate_qr(request):
-#     if request.method == 'POST':
-#         data = request.POST.get('data')
-#         qr = qrcode.QRCode(
-#             version=1,
-#             error_correction=qrcode.constants.ERROR_CORRECT_L,
-#             box_size=10,
-#             border=4,
-#         )
-#         qr.add_data(data)
-#         qr.make(fit=True)
-#         img = qr.make_image(fill_color="black",back_color="white")
-#         img_io = BytesIO()
-#         img.save(img_io, 'PNG')
-#         img_io.seek(0)
-        
-#         return HttpResponse(img_io, content_type='image/png')
-#     context = {
-#         'title': 'generate qr code',
-#     }
-#     tempate_name = 'general/generate_qr.html'
-#     return render(request, tempate_name, context)
+def home(request):
+
+    context = {
+        'title': 'Home',
+    }
+    template_name = 'general/home.html'
+    return render(request, template_name, context)
 
 def generate_qr(request):
     img_data = None

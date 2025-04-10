@@ -1,5 +1,6 @@
 # Use python 3.12 on Debain 12 bookworm
 FROM python:3.12-bookworm
+
 LABEL maintainer="Mong, mr.souriya@gmail.com, PITEC.la"
 
 ENV PYTHONUNBUFFERED=1

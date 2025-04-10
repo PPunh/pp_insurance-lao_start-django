@@ -14,7 +14,8 @@ router = DefaultRouter()
 # router.register('', views.ViewSet)
 
 urlpatterns = [
-    path('', views.generate_qr, name='generate_qr'),
+    path('', views.home, name='home'),
+    path('generate_qr/', views.generate_qr, name='generate_qr'),
     path('api/', include(router.urls)),
 ]
 

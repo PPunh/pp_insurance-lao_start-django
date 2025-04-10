@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{% block title %} {{ title }} {% endblock %}</title>
 
-        <link rel="icon" href="{% static 'images/favicon-32x32.png' %}" type="image/png">
+        <link rel="icon" href="{% static 'images/android-icon-48x48.png' %}" type="image/png">
 
         {% comment %} a ightweight Google Material Design CSS libs {% endcomment %}
         <link href="{% static 'css/w3/w3.css' %}" rel="stylesheet">
@@ -43,6 +43,8 @@
         {% block navigation_top %}
             {% if user.is_authenticated %}
                 {% include 'navigation_top.html' %}
+            {% else %}
+                {% include 'general_navigation.html' %}
             {% endif %}
         {% endblock %}
 
