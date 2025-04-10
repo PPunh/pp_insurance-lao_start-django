@@ -16,6 +16,8 @@ router = DefaultRouter()
 urlpatterns = [
     path('', views.home, name='home'),
     path('generate_qr/', views.generate_qr, name='generate_qr'),
+    path('contact_us/', views.contact_us, name='contact_us'),
+    path('about_us/', views.about_us, name='about_us'),
     path('api/', include(router.urls)),
 ]
 

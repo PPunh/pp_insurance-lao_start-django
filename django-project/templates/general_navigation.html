@@ -1,7 +1,7 @@
 <div class="w3-bar w3-theme-light w3-large">
     <a href="{% url 'users:login' %}" class="w3-bar-item w3-button w3-right w3-red w3-hover-black w3-padding-large">ເຂົ້າສູ່ລະບົບ</a>
-    <a href="#" class="w3-bar-item w3-button w3-right w3-hover-teal w3-padding-large">ຕິດຕໍ່ພວກເຮົາ</a>
-    <a href="#" class="w3-bar-item w3-button w3-right w3-hover-black w3-padding-large">ກ່ຽວກັບພວກເຮົາ</a>
+    <a href="{% url 'general:contact_us' %}" class="w3-bar-item w3-button w3-right w3-hover-teal w3-padding-large">ຕິດຕໍ່ພວກເຮົາ</a>
+    <a href="{% url 'general:about_us' %}" class="w3-bar-item w3-button w3-right w3-hover-black w3-padding-large">ກ່ຽວກັບພວກເຮົາ</a>
     <div class="w3-dropdown-hover w3-right">
         <button class="w3-button w3-hover-black w3-padding-large"
             style="display: flex; align-items: center;">ຟັງຊັ້ນທົ່ວໄປ<i class="material-icons-outlined">expand_more</i></button>
@@ -9,5 +9,5 @@
             <a href="{% url 'general:generate_qr' %}" class="w3-bar-item w3-button w3-medium">ສ້າງ QR Code</a>
         </div>
     </div>
-    <a href="#" class="w3-bar-item w3-button w3-right w3-hover-black w3-padding-large">ຫນ້າຫລັກ</a>
+    <a href="{% url 'general:home' %}" class="w3-bar-item w3-button w3-right w3-hover-black w3-padding-large">ຫນ້າຫລັກ</a>
 </div>

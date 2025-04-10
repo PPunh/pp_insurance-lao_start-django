@@ -44,3 +44,22 @@ def generate_qr(request):
     }
     template_name = 'general/generate_qr.html'
     return render(request, template_name, context)
+
+
+
+def contact_us(request):
+    
+    context = {
+        'title':'Contact US'
+    }
+    template_name = 'general/contact_us.html'
+    return render(request, template_name, context)
+
+
+def about_us(request):
+
+    context = {
+        'title': 'About US'
+    }
+    template_name = 'general/about_us.html'
+    return render(request, template_name, context)
